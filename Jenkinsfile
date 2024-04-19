@@ -1,4 +1,4 @@
-@Library('global-library-test') _
+@Library('global-library-test@main') _
 
 import groovy.json.JsonOutput
 import firm.project.Env
