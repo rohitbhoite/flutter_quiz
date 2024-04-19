@@ -10,7 +10,7 @@ node {
     env.DEBIAN_FRONTEND = 'noninteractive'
     env.TZ = 'Europe/Istanbul'
 
-    docker.image("${configs.dockerImage.name}").inside("${configs.dockerImage.arguments}") {
+    docker.image("instrumentisto/flutter:3.19.6-androidsdk34-r0").inside("${configs.dockerImage.arguments}") {
         stage('CHECKOUT') {
             gitCheckoutLibrary(configs.git)
         }
