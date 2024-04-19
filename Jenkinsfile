@@ -1,12 +1,12 @@
-// @Library('global-libraries@master') _
+@Library('global-library-test') _
 
 import groovy.json.JsonOutput
+import firm.project.Env
 
+def configs = Env.getEnviroments(env)
 
 node {
-    def rootDir = pwd()
-    def exampleModule = load "${rootDir}/environment/Env.Groovy"
-    def configs = exampleModule.getEnviroments(env)
+
     env.DEBIAN_FRONTEND = 'noninteractive'
     env.TZ = 'Europe/Istanbul'
 
@@ -29,7 +29,7 @@ node {
         stage('UPLOAD ARTIFACT') {
             zipTheFileLibrary(configs.zipFile)
 
-//             uploadToNexusLibrary(configs.nexus)
+            //uploadToNexusLibrary(configs.nexus)
         }
         stage('PUBLISH') {
             publishAndroidLibrary(configs.googlePlay)
