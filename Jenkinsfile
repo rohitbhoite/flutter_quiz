@@ -1,12 +1,12 @@
 // @Library('global-libraries@master') _
 
 import groovy.json.JsonOutput
-def rootDir = pwd()
-def exampleModule = load "${rootDir}/environment/@script/Env.Groovy "
-def configs = exampleModule.getEnviroments(env)
+
 
 node {
-
+    def rootDir = pwd()
+    def exampleModule = load "${rootDir}/environment/@script/Env.Groovy "
+    def configs = exampleModule.getEnviroments(env)
     env.DEBIAN_FRONTEND = 'noninteractive'
     env.TZ = 'Europe/Istanbul'
 
