@@ -10,7 +10,7 @@ node {
     env.DEBIAN_FRONTEND = 'noninteractive'
     env.TZ = 'Europe/Istanbul'
 
-    docker.image("instrumentisto/flutter:3.19.6-androidsdk34-r0").inside("--rm -v /my/rust/project:/app -w /app instrumentisto/flutter \\") {
+    docker.image("instrumentisto/flutter:3.19.6-androidsdk34-r0").inside("--user 0 --volume=$HOME/.ssh:/root/.ssh -v .:/app -w /app") {
         stage('CHECKOUT') {
             gitCheckoutLibrary(configs.git)
         }
