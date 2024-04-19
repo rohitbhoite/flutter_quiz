@@ -5,7 +5,7 @@ import groovy.json.JsonOutput
 
 node {
     def rootDir = pwd()
-    def exampleModule = load "${rootDir}/environment/@script/Env.Groovy "
+    def exampleModule = load "${rootDir}/environment/Env.Groovy"
     def configs = exampleModule.getEnviroments(env)
     env.DEBIAN_FRONTEND = 'noninteractive'
     env.TZ = 'Europe/Istanbul'
