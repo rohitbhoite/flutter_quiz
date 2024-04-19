@@ -1,9 +1,7 @@
-@Library('global-libraries@master') _
-
 import groovy.json.JsonOutput
-import environment.Env
+import env
 
-def configs = Env.getEnviroments(env)
+def configs = getEnviroments(env)
 
 node {
 
