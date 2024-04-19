@@ -1,7 +1,7 @@
 import groovy.json.JsonOutput
-import env
+import Env
 
-def configs = getEnviroments(env)
+def configs = Env.getEnviroments(env)
 
 node {
 
