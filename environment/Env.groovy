@@ -15,7 +15,7 @@ class Enviroment {
                 ],
                 dockerImage: [
                         name: 'instrumentisto/flutter:3.16.6-androidsdk33-r0',
-                        arguments: '--user 0 --volume=$HOME/.ssh:/root/.ssh -v .:/app -w /app',
+                        arguments: '--user 0 --volume=$HOME/.ssh:/root/.ssh -v .:/app -w /app instrumentisto/flutter \\',
                         dependencies: ['clang', 'cmake', 'ninja-build', 'pkg-config', 'libgtk-3-dev']
                 ],
                 googlePlay: [
