@@ -1,7 +1,6 @@
 // @Library('global-libraries@master') _
 
 import groovy.json.JsonOutput
-import environment.Env
 def exampleModule = load "${rootDir}/environment/@script/Env.Groovy "
 def configs = exampleModule.getEnviroments(env)
 
