@@ -3,7 +3,8 @@
 import groovy.json.JsonOutput
 import firm.project.Env
 
-def configs = Env.getEnviroments(env)"
+def configs = Env.getEnviroments(env)
+
 node {
 
     env.DEBIAN_FRONTEND = 'noninteractive'
@@ -11,7 +12,7 @@ node {
 
     docker.image("instrumentisto/flutter:3.19.6-androidsdk34-r0").inside("--user 0 --volume=\$HOME/.ssh:/root/.ssh -v .:/app -w /app") {
         stage('CHECKOUT') {
-            gitCheckoutLibrary(configs)
+            gitCheckoutLibrary(configs.git)
         }
         stage('INSTALL TOOLS') {
             installDependenciesLibrary(configs.dockerImage.dependencies)
