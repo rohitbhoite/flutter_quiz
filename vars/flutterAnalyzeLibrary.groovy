@@ -47,4 +47,9 @@ def call(Map params = [:]) {
     }
 
     sh command
+    post {
+        always {
+            recordIssues(tools: [groovyScript(id: 'flutter-analyze', name: 'Flutter Analyze', parserId: '<the id you have configured in system settings>', pattern: '**/flutter_analyze_report.txt')])
+        }
+    }
 }
