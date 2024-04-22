@@ -45,8 +45,9 @@ def call(Map params = [:]) {
     if (currentPackage) {
         command += " --current-package"
     }
-
-    sh command
+    steps {
+        sh command
+    }
     post {
         always {
             recordIssues(tools: [groovyScript(id: 'flutter-analyze', name: 'Flutter Analyze', parserId: '<the id you have configured in system settings>', pattern: '**/flutter_analyze_report.txt')])
