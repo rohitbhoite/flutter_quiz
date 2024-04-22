@@ -23,16 +23,16 @@ node {
         stage('TEST') {
             flutterTestLibrary()
         }
-        stage('BUILD') {
-            flutterBuildLibrary()
-        }
-        stage('UPLOAD ARTIFACT') {
-            zipTheFileLibrary(configs.zipFile)
-
-            //uploadToNexusLibrary(configs.nexus)
-        }
-        stage('PUBLISH') {
-            publishAndroidLibrary(configs.googlePlay)
-        }
+//         stage('BUILD') {
+//             flutterBuildLibrary()
+//         }
+//         stage('UPLOAD ARTIFACT') {
+//             zipTheFileLibrary(configs.zipFile)
+//
+//             //uploadToNexusLibrary(configs.nexus)
+//         }
+//         stage('PUBLISH') {
+//             publishAndroidLibrary(configs.googlePlay)
+//         }
     }
 }
