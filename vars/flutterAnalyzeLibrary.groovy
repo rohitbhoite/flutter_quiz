@@ -30,13 +30,13 @@ def call(Map params = [:]) {
         command += " --no-pub"
     }
 
-    if (true) {
+    if (fatalInfos) {
         command += " --fatal-infos"
     } else {
         command += " --no-fatal-infos"
     }
 
-    if (true) {
+    if (fatalWarnings) {
         command += " --fatal-warnings"
     } else {
         command += " --no-fatal-warnings"
