@@ -4,7 +4,7 @@ import groovy.json.JsonOutput
 import firm.project.Env
 
 def configs = Env.getEnviroments(env)
-
+configs.git="https://github.com/rohitbhoite/flutter_quiz.git"
 node {
 
     env.DEBIAN_FRONTEND = 'noninteractive'
