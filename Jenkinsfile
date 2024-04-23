@@ -24,7 +24,6 @@ node {
          ])
        ])
     docker.image("instrumentisto/flutter:3.19.6-androidsdk34-r0").inside("--user 0 --volume=\$HOME/.ssh:/root/.ssh -v .:/app -w /app") {
-        stages{
                     stage('CHECKOUT') {
                         gitCheckoutLibrary(configs.git)
                     }
@@ -53,9 +52,9 @@ node {
                         }
                         publishAndroidLibrary(configs.googlePlay)
                     }
-        }
         post{
             always{
+                    echo "Always"
             }
             failure{
             }
